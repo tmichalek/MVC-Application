@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Zgloszenie_WebApplication.ViewModel.Robota_ViewModel>
+@foreach (var p in Model)
+
+{
+    <tr>
+        <td>@p.numer</td>
+        <td>@p.rok</td>
+        <td>@p.nazwaGmina</td>
+        <td>@p.nazwaObreb</td>
+        <td>@p.numerDzialki</td>
+        <td>@p.celPracy</td>
+        <td>@p.nazwaFirmy</td>
+
+        @*<td>@p.Numer</td>
+            <td>@p.Rok</td>*@
+
+    </tr>
+}

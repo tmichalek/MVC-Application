@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Zgloszenie_WebApplication.ViewModel.Robota_ViewModel>
+@{
+    ViewBag.Title = "Przeglad Zgloszonych Prac Geodezyjnych";
+
+
+}
+    <div class="contener_przegladanie">
+        <h2 class="h2-szukaj">Przeglad Prac Geodezyjnych </h2>
+
+        <div class="form-szukaj">
+            @using (Ajax.BeginForm("TableSearch",new AjaxOptions
+            {
+               // Url = Url.Action("TableSearch", "Home"),
+                HttpMethod = "Post",
+                UpdateTargetId = "jobSearching",
+                InsertionMode = InsertionMode.Replace
+
+
+            }))
+            {
+                <div>
+
+                    @*@Html.LabelFor(m => m.FirstOrDefault().numer)
+                    @Html.TextBoxFor(m => m.FirstOrDefault().numer)*@
+                    <label for="numerId">Numer</label>
+                    <input type="text" name="numer" id="numerId" />
+                </div>
+
+                <div>
+                    @*@Html.LabelFor(m => m.First().rok)
+                    @Html.TextBoxFor(m => m.First().rok)*@
+                    <label for="rokId">Rok</label>
+                    <input type="text" name="rok" id="rokId" />
+                </div>
+                <div>
+                    @*@Html.LabelFor(m => m.First().nazwaObreb)
+                    @Html.TextBoxFor(m => m.First().nazwaObreb)*@
+                    <label for="obrebId">Obreb</label>
+                    <input type="text" name="obreb" id="obrebId" />
+                </div>
+                <div> <input class="btn-szukaj" type="submit" value="Szukaj"></div>
+            }
+        </div>
+        <div class="tabela-przeglad">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Numer Pracy</td>
+                        <td>Rok</td>
+                        <td>Gmina</td>
+                        <td>Obreb</td>
+                        <td>Numer dzialki</td>
+                        <td>Asortyment</td>
+                        <td>Wykonawca</td>
+                    </tr>
+                </thead>
+                <tbody id="jobSearching">
+                    @Html.Action("TableSearch", "Home")
+
+                    @*@foreach (var p in Model)
+
+                    {
+                        <tr>
+                            <td>@p.numer</td>
+                            <td>@p.rok</td>
+                            <td>@p.nazwaGmina</td>
+                            <td>@p.nazwaObreb</td>
+                            <td>@p.numerDzialki</td>
+                            <td>@p.celPracy</td>
+                            <td>@p.nazwaFirmy</td>
+
+                            <td>@p.Numer</td>
+                                <td>@p.Rok</td>
+
+                        </tr>*@
+                    @*}*@
+                </tbody>
+            </table>
+
+        </div>
+        
+    </div>

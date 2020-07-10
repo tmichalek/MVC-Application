@@ -1,0 +1,235 @@
+﻿@model Zgloszenie_WebApplication.ViewModel.Gmina_ObrebViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href=@Url.Content("~/Content/zgloszenie.css")>
+</head>
+
+<body>
+
+    <header>
+        <h2>ZGLOSZENIE PRACY GEODEZYJNEJ</h2>
+    </header>
+    <main>
+        <div id=container>
+            @using (@Html.BeginForm("DodajZgloszenie", "Home", FormMethod.Post))
+            {
+                <div id=daneosob>
+
+                    <div>Imie nazwisko/Firma geodezyjna<input type="text" name="imie"> </div>
+                    <div>Adres/Siedziba firmy<input type="text" name="adres"> </div>
+                    <div>Identyfikator wykonawcy<input type="text" name="idWyk"> </div>
+                    <div> Dane kontaktowe<input type="text" name="kontakt"></div>
+                    <div>
+                        <input type="radio" name="rodzaj">Zgloszenie pierwotne
+                        <input type="radio" name="rodzaj">Zgloszenie uzupełniające
+                    </div>
+                    <div>Miejscowość i data<input type="datetime-local" name="DataZgloszenia"> </div>
+                    <div>Nazwa organu<input type="text" name="imie"> </div>
+                    <div>Identyfikator zgloszonej pracy<input type="text" name="imie"> </div>
+
+                </div>
+
+                <div id=kierownik>
+                    <fieldset>
+                        <legend>Dane osoby którym przedsiębiorca powierzył funkcje kierownika</legend>
+                        <table id=tkier>
+                            <tr>
+
+                                <th class="naglowek">Lp</th>
+
+                                <th class="naglowek"> Imie i nazwisko</th>
+
+                                <th class="naglowek"> Numer uprawnień</th>
+
+                                <th class="naglowek"> Zakres uprawnień</th>
+
+                                <th class="naglowek"> Zakres powierzonych czynności</th>
+
+                                <th class="naglowek"> Dane kontaktowe</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td><input type="text" name="numer"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                <div id="midle">
+
+                    <div id="cel">
+                        <fieldset>
+                            <legend>Cel pracy geodezyjnej</legend>
+                            <select name="AsortymentId">
+
+                                <option value=1>zalozenieEGiB</option>
+                                <option value=2>modernizacjaEGiB</option>
+                                <option value=3>aktualizacjaEGiB</option>
+                                <option value=4>utworzenieGESUT</option>
+                                <option value=5>aktualizacjaGESUT</option>
+                                <option value=6>utworzenieBDOT500</option>
+                                <option value=7>aktualizacjaBDOT500</option>
+                                <option value=8>utworzenieBDSOG</option>
+                                <option value=9>aktualizacjaBDSOG</option>
+                                <option value=10>utworzeniePRPOG</option>
+                                <option value=11>aktualizacjaPRPOG</option>
+                                <option value=12>utworzenieBDOT10k</option>
+                                <option value=13>aktualizacjaBDOT10k</option>
+                                <option value=14>utworzenieBDOO</option>
+                                <option value=15>aktualizcjaBDOO</option>
+
+                                <option value=16>utworzenieKGESUT</option>
+                                <option value=17>aktualizacjaKGESUT</option>
+                                <option value=18>utworzenieZBDOT10k</option>
+                                <option value=19>aktualizacjaZBDOT10k</option>
+                                <option value=20>utworzeniePRG</option>
+                                <option value=21>aktualizacjaPRG</option>
+                                <option value=22>utworzeniePRNG</option>
+                                <option value=23>aktualizacjaPRNG</option>
+                                <option value=24>utworzenieBDOrto</option>
+                                <option value=25>utworzenieBDNMT</option>
+                                <option value=26>mapaZProjPodzialu</option>
+                                <option value=27>mapaZProjPodzialuRL</option>
+                                <option value=28>mapaZProjScalenia</option>
+                                <option value=29>projScaleniaGruntow</option>
+                                <option value=30>projWymianyGruntow</option>
+                                <option value=31>innaMapaDoCelowPr</option>
+                                <option value=32>rozgrNieruchomosci</option>
+                                <option value=33>wznZnakowGrWyznPGr</option>
+                                <option value=34>mapaDoCelowProj</option>
+                                <option value=35>geodInwPowykObBud</option>
+                                <option value=36>tyczenieObBud</option>
+                                <option value=37>innyCel</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                    <div id="info">
+                        <label>
+                            <input class="inf" type="radio" name="info" value="organ">Organ Służby Geodezyjnej i
+                            Kartograficznej
+                        </label>
+                        <label>
+                            <input class="inf" type="radio" name="info" value="podmiotPub">podmiot publiczny nie będący
+                            organem SGiK
+                        </label>
+                        <label>
+                            <input class="inf" type="radio" name="info" value="podmiotNie" checked>podmiot
+                            niepubliczny
+                        </label>
+                    </div>
+
+                    <div id="rodzaj">
+                        <fieldset>
+                            <legend>Rodzaj zgłaszanych prac</legend>
+                            <select id="rodz" name="rodzaj[]">
+                                <option value="syt">pomiarySyt</option>
+                                <option value="wys">pomiaryWys</option>
+                                <option value="sytwys">pomiarySytWys</option>
+                                <option value="osn">pomiaryOsnowGeod</option>
+                                <option value="osng">pomiaryOsnowGraw</option>
+                                <option value="osnm">pomiaryOsnowMagn</option>
+                                <option value="lot">zobrazowaniaLotnicze</option>
+                                <option value="laser">skaningLaserowy</option>
+                                <option value="inne">Inne</option>
+                            </select>
+                        </fieldset>
+                    </div>
+
+                    <div id=datazakonczenia>
+                        <fieldset> <legend>Data zakończenia pracy</legend></fieldset>
+                        <input type="date" name="DataZakonczeniaPrac">
+                    </div>
+
+                </div>
+
+                <div id="ob">
+                    <table id="obszar">
+                        <tr>
+
+                            <th id="pierwszy">Sposób określenia położenia obszaru</th>
+                            <th>Dane określające położenie obszru</th>
+                            <th>Nazwa/oznaczenie obiektu</th>
+                            <th id="ostatni">Charakter obiektu</th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="obsz" value="jpt"> Jednostki podziału
+                                        terytorialnego
+                                    </label>
+                                </div>
+                                <div><label><input type="radio" name="obsz" value="gpm"> Godło mapy</label></div>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="obsz" value="jpk" checked> Jednostki podziału kraju
+                                        stosowane w EGiB
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="obsz" value="zal"> Obszar określony w
+                                        załączniku
+                                    </label>
+                                </div>
+                                <div> <label><input type="radio" name="obsz" value="pol"> Współrzędne poligonu</label></div>
+                                <div><label><input type="radio" name="obsz" value="cen"> Współrzędne centroidu</label></div>
+                            </td>
+
+
+                            <td>
+                                <legend>Gmina</legend>
+                                @*<select id="gmina" name="GminaId">*@
+                                    
+                                  @Html.DropDownList("GminaId", new SelectList(Model.Gminas,"GminaId","NazwaGmina"))
+                                @*</select>*@
+
+
+                                <legend>Obreb</legend>
+                                @Html.DropDownList("ObrebId", new SelectList(Model.Obrebs, "ObrebId", "NazwaObreb"))
+                                @*<select id="obreb" name="ObrebId">
+                                </select>*@
+
+                            </td>
+                            <td><input type="text" name="PolozenieOpis"></td>
+                            <td>
+                                <div id="char">
+                                    <div><label> <input type="radio" name="CharakterOb" value="powierzchniowy"> powierzchniowy</label></div>
+                                    <div><label><input type="radio" name="CharakterOb" value="liniowy">liniowy</label></div>
+                                    <div><label><input type="radio" name="CharakterOb" value="punktowy">punktowy</label></div>
+                                </div>
+                            </td>
+
+
+                        </tr>
+                    </table>
+
+
+
+
+                    <div id="przycisk"><input type="submit" name=przycisk value="DodajZgloszenie"></div>
+
+                </div>
+
+
+            }
+
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNet.Identity
+
+    <div class="top">
+        <header>
+            <nav class="left">
+
+                <ul >
+                    <li><a href=@Url.Action("Index", "Home")><i class="fas fa-home"></i> STRONA GŁÓWNA</a></li>
+                    <li><a href=@Url.Action("ZgloszeniePracy","Home")><i class="fas fa-database"></i> ZGŁASZANIE PRAC</a></li>
+                    <li><a href=@Url.Action("Przeglad", "Home")><i class="fas fa-book-reader"></i> PRZEGLADANIE PRAC</a></li>
+                    <li><a href=@Url.Action("Zgloszenie", "Home", new {nazwa = "Kontakt"})><i class="fas fa-address-book"></i> KONTAKT</a></li>
+                </ul>
+            </nav>
+
+            <nav class="right">
+                <ul>
+                    <li>
+                       
+
+                            <a href="@Url.Action("Login","Account")">LOGIN<i class="fas fa-sign-in-alt"></i></a>
+                      
+                    </li>
+                    <li>
+                        <div class="logout">
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {@Html.AntiForgeryToken()
+                            <a href="javascript:document.getElementById('logoutForm').submit()"> LOGOUT<i class="fas fa-sign-out-alt"></i></a>
+                        }
+                        </div>
+                    </li>
+                    <li>
+                        <div class="register">
+                            <a href=@Url.Action("Register","Account")>REJESTRACJA<i class="fas fa-edit"></i></a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+
+                            @Html.ActionLink("Witaj " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+                        </div>
+                    </li>
+                    </ul>
+            </nav>
+        </header>
+    </div>

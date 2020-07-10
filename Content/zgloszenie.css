@@ -1,0 +1,37 @@
+#obszar,#obreb_z_bazy{width:100%;border:2px dotted #0e2342}
+#obszar th,#obreb_z_bazy th,#obszar td,#obreb_z_bazy td{width:20%;border:1px solid #b7eff3}
+#index{width:100%;background-color:#553355}
+#index header{width:100%;font-size:40px;text-align:center;margin-bottom:20px;color:#000}
+#index .container{width:100%;background-color:#1089f3;margin:auto}
+#index .container div{text-align:center}
+#index .container input[type=text],#index .container input[type=password]
+{width:20%;
+ color:green;
+ -webkit-box-sizing:border-box;
+ box-sizing:border-box;
+ padding:5px;
+ margin-top:5px;
+  border-radius:5px;
+
+}
+#index .container input[type=submit]{width:150px;color:green;-webkit-box-sizing:border-box;box-sizing:border-box;margin-top:20px;padding:10px;border-radius:5px}
+#index .container input:hover[type=submit]{background-color:#BBBBBB}
+#container{width:90%;border:2px dotted #0e2342;padding:2px;margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+header{text-align:center;background-color:#1089f3}
+#daneosob{border:2px dotted #0e2342}
+#form{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-flow:wrap;flex-flow:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:auto}
+#form div{border:2px solid #0e2342;min-width:45%;min-height:55%;margin:2px;text-align:left;padding:2px}
+#form div input[type=text],#form div [type=adress]{background-color:#b7eff3;height:50%;width:90%}
+#kierownik{margin-top:4px;border:2px dotted #0e2342}
+#kierownik th,#kierownik tr,#kierownik td{width:15%;padding:2px;border:1px solid #b7eff3;text-align:center}
+#kierownik th input,#kierownik tr input,#kierownik td input{width:90%}
+#midle{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;border:2px dotted #0e2342;margin-top:3px}
+#cel{margin:auto;width:47%;border:1px solid #b7eff3;text-align:center}
+                                                                                                                                      
+#cel select,#cel legend{width:80%;height:40px;padding-top:10px;margin-left:5px;text-align:center}
+                                                                                                                                      
+#info{margin:auto;width:47%;border:1px solid #b7eff3;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}                                                                                                                                                                                                                                                                                                             #info input{height:40px;-ms-flex-line-pack:center;align-content:center;justify-content:left}
+input {
+    background-color:azure;
+}                                                                                                                                                                                                                                                                                                             #rodzaj{width:47%;margin:auto;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:left;-ms-flex-pack:left;justify-content:left}#rodzaj input{height:40px;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:left;-ms-flex-pack:left;justify-content:left}#datazakonczenia{width:47%;border:1px solid #b7eff3;margin:auto;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:left;-ms-flex-pack:left;justify-content:left;margin-bottom:2px}#obszar #pierwszy,#obszar #ostatni{width:30%}input[type=text]{width:98%}#char{display:inline-block}#gmina{margin:5px}#przycisk{background-color:#b6bace;width:100%;text-align:center}#przycisk input[type=submit]{font-size:20px;width:30%;height:30%;margin:7px}
+/*# sourceMappingURL=zgloszenie.css.map */
